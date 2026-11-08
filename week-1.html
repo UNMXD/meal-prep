@@ -64,6 +64,13 @@
   .ttband{margin:-18px -18px 14px; background:linear-gradient(135deg,#2e933c,#7cc24f); color:#fff; padding:24px 18px; text-align:center;}
   .ttband .big{font-size:32px;}
   .ttband .t{font-weight:800; font-size:17px; margin-top:4px;}
+
+  details{margin-top:6px;}
+  details summary{cursor:pointer; font-weight:800; color:var(--accent2); font-size:18px; padding:10px 0 4px; list-style:none;}
+  details summary::-webkit-details-marker{display:none;}
+  details summary::before{content:"▸ ";}
+  details[open] summary::before{content:"▾ ";}
+  details summary:active{opacity:.7;}
 </style>
 </head>
 <body>
@@ -100,6 +107,7 @@
   <div class="card recipe">
     <h3>Mexican Chicken &amp; Rice — makes 10 portions</h3>
     <p class="macros">450 cal · 45P · 47C · 9F per portion</p>
+    <details><summary>Ingredients &amp; method — tap to open</summary>
     <h4>Ingredients</h4>
     <ul>
       <li>Chicken breast — 1,875 g (about 4.1 lb)</li>
@@ -122,11 +130,13 @@
       <li>Add the water/stock and the black beans. Mix well, cover, and simmer on low 12–15 minutes, stirring halfway so the rice doesn't stick.</li>
       <li>Fold the chicken back in with the chopped coriander and a final squeeze of lime. Divide into 10 containers.</li>
     </ol>
+    </details>
   </div>
 
   <div class="card recipe">
     <h3>Teriyaki Chicken Fried Rice — makes 10 portions</h3>
     <p class="macros">450 cal · 45P · 36C · 12F per portion</p>
+    <details><summary>Ingredients &amp; method — tap to open</summary>
     <h4>Ingredients</h4>
     <ul>
       <li>Chicken breast — 60 oz (3.75 lb), diced</li>
@@ -150,6 +160,7 @@
       <li>Divide into 10 containers, drizzle yum yum sauce over each, and top with sesame seeds and green onions if using.</li>
     </ol>
     <div class="ipbox"><strong>Instant Pot note:</strong> we don't own a separate slow cooker — the Instant Pot covers both jobs. Slow Cook mode for the true set-it-and-forget-it version, pressure mode when prep day is running long. Same dish either way.</div>
+    </details>
   </div>
 
 <h2>What We Eat Each Day</h2>
