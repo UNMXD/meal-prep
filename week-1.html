@@ -65,12 +65,17 @@
   .ttband .big{font-size:32px;}
   .ttband .t{font-weight:800; font-size:17px; margin-top:4px;}
 
-  details{margin-top:6px;}
-  details summary{cursor:pointer; font-weight:800; color:var(--accent2); font-size:18px; padding:10px 0 4px; list-style:none;}
-  details summary::-webkit-details-marker{display:none;}
-  details summary::before{content:"▸ ";}
-  details[open] summary::before{content:"▾ ";}
-  details summary:active{opacity:.7;}
+  .cols{display:grid; grid-template-columns:1fr; gap:14px; align-items:start; margin-top:14px;}
+  @media(min-width:760px){ .wrap{max-width:1080px;} .cols{grid-template-columns:1fr 1fr;} }
+  details.panel{background:var(--card); border:1px solid var(--line); border-radius:16px; box-shadow:0 1px 3px rgba(60,50,20,.06); overflow:hidden;}
+  details.panel>summary{list-style:none; cursor:pointer; font-weight:800; font-size:20px; padding:16px 18px; display:flex; justify-content:space-between; align-items:center; gap:10px;}
+  details.panel>summary::-webkit-details-marker{display:none;}
+  details.panel>summary::after{content:"▸"; color:var(--accent2); font-size:22px; flex:0 0 auto;}
+  details.panel[open ]>summary::after{content:"▾";}
+  details.panel>summary:active{opacity:.7;}
+  details.panel .body{padding:2px 18px 18px;}
+  details.panel .card{margin:10px 0;}
+  details.panel .thumb, details.panel .ttband{margin:0 0 14px;}
 </style>
 </head>
 <body>
@@ -80,64 +85,63 @@
   <div class="hero"><div class="emojis">🥗 🍗 🥑 🌽 🍚</div><h1>🍽️ Week 1 — Fresh &amp; Simple</h1>
   <p class="sub">Monday Nov 9 – Friday Nov 13 · Two home-cooked meals a day, a shake for breakfast, and snacks + dessert built right in. Same meals for both of us — simple on purpose.</p></div>
 
-  <h2>The Two Meals</h2>
+  <div class="cols">
 
-  <div class="card">
+  <details class="panel"><summary>🍗 1. Mexican Chicken &amp; Rice — 450 cal</summary><div class="body">
     <a href="https://www.youtube.com/watch?v=y4rxduzwBeI"><div class="thumb"><img src="https://i.ytimg.com/vi/y4rxduzwBeI/hqdefault.jpg" alt="Watch the recipe video video thumbnail" loading="lazy"><span class="play">▶</span><span class="vlabel">🎬 Watch the recipe video</span></div></a>
-    <h3>1. Mexican Chicken &amp; Rice</h3>
+    
     <p class="macros">450 cal · 45g protein · 47g carbs · 9g fat</p>
     <p>By Jalalsamfit. We make 10 portions on prep day.</p>
     <div class="video yt"><iframe src="https://www.youtube.com/embed/y4rxduzwBeI" title="Mexican Chicken and Rice video" allowfullscreen loading="lazy"></iframe></div>
     <p class="watchlink"><a href="https://www.youtube.com/shorts/y4rxduzwBeI">Open the video on YouTube</a></p>
-  </div>
+  </div></details>
 
-  <div class="card">
+  <details class="panel"><summary>🍚 2. Teriyaki Chicken Fried Rice — 450 cal</summary><div class="body">
     <div class="ttband"><div class="big">▶️ 🍚</div><div class="t">Teriyaki Fried Rice — video below, on TikTok</div></div>
-    <h3>2. Slow Cooker Teriyaki Chicken Fried Rice</h3>
+    
     <p class="macros">450 cal · 45g protein · 36g carbs · 12g fat</p>
     <p>By Nikita Fair. The slow cooker does the work — 10 portions as written, with yum yum sauce.</p>
     <div class="video tt"><iframe src="https://www.tiktok.com/embed/v2/7569701455171538189" title="Teriyaki Chicken Fried Rice video" allowfullscreen loading="lazy"></iframe></div>
     <p class="watchlink"><a href="https://www.tiktok.com/@nikitafair/video/7569701455171538189">Open the video on TikTok</a></p>
-  </div>
+  </div></details>
 
   
-  <h2>📖 The Recipes (Written Out)</h2>
-  <p class="sub">Same recipes as the videos, written down so nobody has to scrub through a video with chicken hands. Quantities are for our full batch — 10 portions each.</p>
 
-  <div class="card recipe">
-    <h3>⭐ Mexican Chicken &amp; Rice — makes 10 portions</h3>
+  <details class="panel"><summary>⭐ Mexican Chicken &amp; Rice — the written recipe</summary><div class="body">
+    <p class="sub">Same recipes as the videos, written down so nobody has to scrub through a video with chicken hands. The Mexican is the creator's recipe doubled; the teriyaki makes 10 portions as written.</p>
+    
     <p class="macros">450 cal · 45P · 47C · 9F per portion</p>
-    <details><summary>Ingredients &amp; method — tap to open</summary>
+    
     <h4>Ingredients</h4>
     <ul>
-      <li>Chicken breast — about 4.1 lb</li>
-      <li>Dry rice — about 2¾ cups (don't drop to 2 cups — we tried it, comes out with too little rice)</li>
+      <li>Chicken breast — 1 value pack (about 4–5 lb) — what we buy and use; it came out good</li>
+      <li>Dry rice — about 2¼ cups (we used 2 cups our first time and it felt like too little rice — don't short it)</li>
       <li>Black beans — 1 can (15 oz), drained &amp; rinsed</li>
       <li>Canned diced tomatoes — 2 cans (14.5 oz each) — our addition from the video; not in the creator's written recipe</li>
       <li>Yellow onions — 2, diced</li>
       <li>Red bell peppers — 2, diced</li>
-      <li>Limes — 3 (juice + wedges)</li>
+      <li>Limes — 2 (juice + wedges)</li>
       <li>Fresh coriander / cilantro — chopped, for garnish</li>
-      <li>Chicken seasoning: 5 tsp oregano, 5 tsp paprika, 2½ tsp each of garlic powder, cumin, chili powder, salt &amp; black pepper</li>
-      <li>Olive oil — about 1½ Tbsp, for cooking</li>
-      <li>About 3 cups water or chicken stock (the tomato juice counts as liquid)</li>
+      <li>Chicken seasoning: 4 tsp oregano, 4 tsp paprika, 2 tsp each of garlic powder, cumin, chili powder, salt &amp; black pepper</li>
+      <li>Olive oil — 4 tsp, for cooking</li>
+      <li>About 2½ cups water or chicken stock (the tomato juice counts as liquid)</li>
     </ul>
     <h4>Method</h4>
     <ol>
-      <li>Cube the chicken and season it all over with the chicken seasoning above (5 tsp oregano, 5 tsp paprika, 2½ tsp each of the rest) and the juice of 2 limes. Rest 10 minutes while you chop the onion and peppers.</li>
+      <li>Cube the chicken and season it all over with the chicken seasoning above (4 tsp oregano, 4 tsp paprika, 2 tsp each of the rest) and the juice of 2 limes. Rest 10 minutes while you chop the onion and peppers.</li>
       <li>Cook the chicken in a little olive oil in a big pot or deep pan, 6–8 minutes, until golden and cooked through. Set aside.</li>
       <li>In the same pot, cook the onion and bell pepper until soft.</li>
-      <li>Add the dry rice, 2½ tsp of each seasoning (the same mix as the chicken), and the diced tomatoes — toast 1–2 minutes, stirring.</li>
+      <li>Add the dry rice, 2 tsp of each seasoning (the same mix as the chicken), and the diced tomatoes — toast 1–2 minutes, stirring.</li>
       <li>Add the water/stock and the black beans. Mix well, cover, and simmer on low 12–15 minutes, stirring halfway so the rice doesn't stick.</li>
       <li>Fold the chicken back in with the chopped coriander and a final squeeze of lime. Divide into 10 containers.</li>
     </ol>
-    </details>
-  </div>
+    
+  </div></details>
 
-  <div class="card recipe">
-    <h3>Teriyaki Chicken Fried Rice — makes 10 portions</h3>
+  <details class="panel"><summary>🍚 Teriyaki Chicken Fried Rice — the written recipe</summary><div class="body">
+    
     <p class="macros">450 cal · 45P · 36C · 12F per portion</p>
-    <details><summary>Ingredients &amp; method — tap to open</summary>
+    
     <h4>Ingredients</h4>
     <ul>
       <li>Chicken breast — 60 oz (3.75 lb), diced</li>
@@ -161,12 +165,12 @@
       <li>Divide into 10 containers, drizzle yum yum sauce over each, and top with sesame seeds and green onions if using.</li>
     </ol>
     <div class="ipbox"><strong>Instant Pot note:</strong> we don't own a separate slow cooker — the Instant Pot covers both jobs. Slow Cook mode for the true set-it-and-forget-it version, pressure mode when prep day is running long. Same dish either way.</div>
-    </details>
-  </div>
+    
+  </div></details>
 
 
-  <div class="card">
-    <h3>⚖️ Portioning — how a serving stays 450 cal</h3>
+  <details class="panel"><summary>⚖️ Portioning — how a serving stays 450 cal</summary><div class="body">
+    
     <p>The whole batch is about 4,500 cal, so one true portion is exactly <strong>one tenth of the pot</strong>. Portioning is what makes the 450 real:</p>
     <ul>
       <li><strong>Stir the finished dish really well first</strong> — if the chicken settles, one container ends up all rice and another all chicken, and the calories drift even if they look the same size.</li>
@@ -175,9 +179,9 @@
       <li><strong>Short on containers?</strong> Five per dish works — each holds 2 portions (a day for both of us), split in half when serving.</li>
       <li><strong>Storage:</strong> 6 containers per dish in the fridge (Mon–Wed), 4 in the freezer (Thu–Fri). Move frozen ones to the fridge the night before.</li>
     </ul>
-  </div>
+  </div></details>
 
-<h2>What We Eat Each Day</h2>
+<details class="panel"><summary>📅 What We Eat Each Day</summary><div class="body">
   <p class="sub">Every day: shake for breakfast (300 cal), one snack, and a store-bought dessert (~100 cal). Bobby gets one extra snack — two mini cinnamon rolls (210 cal) — because his daily target is 200 cal higher.</p>
 
   <div class="card day">
@@ -228,9 +232,9 @@
     <div class="row"><span class="k">Snack</span><span class="v">2 hard-boiled eggs<small>155 cal</small></span></div>
     <div class="row"><span class="k">Dessert</span><span class="v">Store-bought dessert<small>~100 cal</small></span></div>
     <div class="row"><span class="k">Bobby +</span><span class="v">2 mini cinnamon rolls<small>210 cal</small></span></div>
-  </div>
+  </div></div></details>
 
-  <h2>Daily Totals</h2>
+<details class="panel"><summary>📊 Daily Totals</summary><div class="body">
   <div class="card person dam">
     <h3>Dam</h3>
     <p class="total-big">~1,450 cal <span style="font-size:17px; color:var(--muted); font-weight:600;">/ 1,500 target</span></p>
@@ -240,15 +244,15 @@
     <h3>Bobby</h3>
     <p class="total-big">~1,660 cal <span style="font-size:17px; color:var(--muted); font-weight:600;">/ 1,700 target</span></p>
     <p>Everything Dam has, plus the two cinnamon rolls. Same portions, same meals — no separate cooking.</p>
-  </div>
+  </div></div></details>
 
-  <h2>Dessert — Every Night, Both of Us</h2>
+<details class="panel"><summary>🍰 Dessert — every night, both of us</summary><div class="body">
   <div class="card">
     <h3>Bought, not made 🛒</h3>
     <p>No baking, no blending, no dishes. Dessert is ready-made from the store: a frozen Greek yogurt bar or a protein yogurt cup, about 80–100 cal with 5–12g protein. One each, every night.</p>
-  </div>
+  </div></div></details>
 
-<h2>Fillers &amp; The Emergency Stash 🚨</h2>
+<details class="panel"><summary>🚨 Fillers &amp; the Emergency Stash</summary><div class="body">
   <div class="card">
     <p>For hungry moments between meals — tiny calories, big distraction. Everything here is bought ready; nothing to make.</p>
     <ul class="emerg" style="list-style:none; margin-top:8px;">
@@ -257,9 +261,9 @@
       <li>🧀 Pirate's Booty single-serve bags — 70 cal</li>
     </ul>
     <p class="sub">Stash rule: an emergency snack swaps for that night's dessert — it doesn't stack on top.</p>
-  </div>
+  </div></div></details>
 
-<h2>The Shopping List</h2>
+<details class="panel"><summary>🛒 The Shopping List</summary><div class="body">
   <div class="card">
     <p class="sub" style="margin-top:0;">Bulverde H-E-B plus! (Spring Branch) · Curbside · What is actually in the cart</p>
     <ul class="list">
@@ -286,6 +290,8 @@
     </ul>
     <p class="total-big" style="margin-top:12px;">Total ≈ $83.47 + dessert</p>
     <p class="sub">Budget is under $100 for the two of us — the dessert still fits. ✅ Sauces &amp; spices come from home.</p>
+  </div></div></details>
+
   </div>
 
 <div class="note"><strong>Prep day note:</strong> Cook once on Sunday. Portions keep 3–4 days in the fridge — freeze the Thursday/Friday portions on prep day and move them to the fridge the night before.</div>
