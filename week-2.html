@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 2 — Nov 16–20 · Our Meal Prep</title>
+<style>
+  :root{
+    --bg:#faf6ef; --card:#ffffff; --ink:#22201c; --muted:#6f6a5e;
+    --accent:#e4572e; --accent2:#2e933c; --line:#e8e0d0; --chip:#f3ecdd;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{background:var(--bg); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; font-size:19px; line-height:1.5; padding:20px 16px 48px;}
+  .wrap{max-width:560px; margin:0 auto;}
+  h1{font-size:32px; line-height:1.15; letter-spacing:-.5px;}
+  h2{font-size:24px; margin:34px 0 12px; letter-spacing:-.3px;}
+  h3{font-size:20px; margin-bottom:4px;}
+  p{margin:8px 0;}
+  .sub{color:var(--muted); font-size:17px; margin-top:6px;}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px; margin:14px 0; box-shadow:0 1px 3px rgba(60,50,20,.06);}
+  .macros{color:var(--accent); font-weight:700; font-size:17px;}
+  .tag{display:inline-block; background:var(--chip); border-radius:999px; padding:3px 12px; font-size:15px; font-weight:600; margin:2px 4px 2px 0;}
+  .video{position:relative; border-radius:12px; overflow:hidden; margin:12px 0 4px; background:#000;}
+  .video iframe{display:block; width:100%; border:0;}
+  .video.yt{aspect-ratio:16/9;}
+  .video.yt iframe{height:100%;}
+  .video.tt{max-width:360px; margin-left:auto; margin-right:auto;}
+  .video.tt iframe{height:640px;}
+  .watchlink{font-size:16px;}
+  a{color:var(--accent); font-weight:600;}
+  .day{border-left:6px solid var(--accent2);}
+  .day.flip{border-left-color:var(--accent);}
+  .day h3{font-size:21px;}
+  .row{display:flex; justify-content:space-between; gap:12px; padding:5px 0; border-bottom:1px dashed var(--line);}
+  .row:last-child{border-bottom:0;}
+  .row .k{color:var(--muted); flex:0 0 92px; font-size:16px; padding-top:2px;}
+  .row .v{flex:1; text-align:right; font-weight:600;}
+  .row .v small{display:block; font-weight:400; color:var(--muted); font-size:15px;}
+  .person{border-top:6px solid var(--accent);}
+  .person.dam{border-top-color:var(--accent2);}
+  .total-big{font-size:30px; font-weight:800;}
+  ul.list{list-style:none;}
+  ul.list li{display:flex; justify-content:space-between; gap:12px; padding:6px 0; border-bottom:1px dashed var(--line);}
+  ul.list li:last-child{border-bottom:0;}
+  ul.list .p{font-weight:700; white-space:nowrap;}
+  .note{background:#fff8e8; border:1px solid #ecd9a0; border-radius:12px; padding:14px 16px; margin:14px 0; font-size:17px;}
+  .foot{color:var(--muted); font-size:15px; text-align:center; margin-top:36px;}
+  .emerg li{padding:4px 0;}
+
+  .recipe h4{font-size:18px; margin:14px 0 4px; color:var(--accent);}
+  .recipe ul,.recipe ol{margin:6px 0 6px 22px;}
+  .recipe li{padding:3px 0;}
+  .ipbox{background:#eef7ee; border:1px solid #bcd8bc; border-radius:12px; padding:14px 16px; margin:14px 0;}
+
+  .card{overflow:hidden;}
+  .hero{background:linear-gradient(135deg,#2e933c 0%,#4caf50 55%,#7cc24f 100%); color:#fff; border-radius:20px; padding:26px 22px; margin:6px 0 10px; box-shadow:0 4px 14px rgba(46,147,60,.25);}
+  .hero h1{color:#fff;}
+  .hero .sub{color:#eaf7ea;}
+  .hero .emojis{font-size:26px; letter-spacing:6px; margin-bottom:10px;}
+  .thumb{margin:-18px -18px 14px; position:relative;}
+  .thumb img{width:100%; display:block; aspect-ratio:16/9; object-fit:cover;}
+  .thumb .play{position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:64px; height:64px; border-radius:50%; background:rgba(0,0,0,.55); color:#fff; font-size:26px; display:flex; align-items:center; justify-content:center; padding-left:5px;}
+  .thumb .vlabel{position:absolute; left:10px; bottom:10px; background:rgba(0,0,0,.55); color:#fff; font-size:13px; font-weight:700; padding:3px 10px; border-radius:999px;}
+  .ttband{margin:-18px -18px 14px; background:linear-gradient(135deg,#2e933c,#7cc24f); color:#fff; padding:24px 18px; text-align:center;}
+  .ttband .big{font-size:32px;}
+  .ttband .t{font-weight:800; font-size:17px; margin-top:4px;}
+
+  .cols{display:grid; grid-template-columns:1fr; gap:14px; align-items:start; margin-top:14px;}
+  @media(min-width:760px){ .wrap{max-width:1080px;} .cols{grid-template-columns:1fr 1fr;} }
+  details.panel{background:var(--card); border:1px solid var(--line); border-radius:16px; box-shadow:0 1px 3px rgba(60,50,20,.06); overflow:hidden;}
+  details.panel>summary{list-style:none; cursor:pointer; font-weight:800; font-size:20px; padding:16px 18px; display:flex; justify-content:space-between; align-items:center; gap:10px;}
+  details.panel>summary::-webkit-details-marker{display:none;}
+  details.panel>summary::after{content:"▸"; color:var(--accent2); font-size:22px; flex:0 0 auto;}
+  details.panel[open ]>summary::after{content:"▾";}
+  details.panel>summary:active{opacity:.7;}
+  details.panel .body{padding:2px 18px 18px;}
+  details.panel .card{margin:10px 0;}
+  details.panel .thumb, details.panel .ttband{margin:0 0 14px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <p style="margin-bottom:10px;"><a href="index.html">← Home</a></p>
+  <div class="hero"><div class="emojis">🌯 🍗 🥔 🧀 🌽</div><h1>🍽️ Week 2 — Comfort Food Remakes</h1>
+  <p class="sub">Monday Nov 16 – Friday Nov 20 · Two home-cooked meals a day, a shake for breakfast, and snacks + dessert built right in. Same meals for both of us.</p></div>
+
+  <div class="card"><p><strong>Plan status:</strong> meals final, list priced. The H-E-B cart is <strong>not built yet</strong>; it waits on Bobby's go-ahead. Prep day is Sunday Nov 15.</p></div>
+
+  <div class="cols">
+
+  <details class="panel"><summary>🌯 1. Cheesy Chicken Enchilada Bowls — 480 cal</summary><div class="body">
+    <a href="https://www.youtube.com/shorts/RShiJ-0YHhw"><div class="thumb"><img src="https://i.ytimg.com/vi/RShiJ-0YHhw/hqdefault.jpg" alt="Enchilada Bowls video thumbnail" loading="lazy"><span class="play">▶</span><span class="vlabel">🎬 Watch the recipe video</span></div></a>
+    <p class="macros">480 cal · 51g protein · 44g carbs · 10g fat</p>
+    <p>By CookingForGains. Seasoned chicken, peppers and onion simmered with jasmine rice, red enchilada sauce and melted cheese, all in one pan.</p>
+    <div class="video yt"><iframe src="https://www.youtube.com/embed/RShiJ-0YHhw" title="Cheesy Chicken Enchilada Bowls video" allowfullscreen loading="lazy"></iframe></div>
+    <p class="watchlink"><a href="https://www.youtube.com/shorts/RShiJ-0YHhw">Open the video on YouTube</a></p>
+  </div></details>
+
+  <details class="panel"><summary>🍗 2. KFC Famous Bowls, our version — about 487 cal</summary><div class="body">
+    <div class="ttband"><div class="big">▶️ 🍗</div><div class="t">KFC Famous Bowl — recipe + video on Sam's page</div></div>
+    <p class="macros">About 487 cal · about 49g protein (our version, estimated)</p>
+    <p>By Simple Recipes by Sam, with our swaps: plain seasoned chicken breast instead of breaded nuggets, and instant mashed potatoes only. No cauliflower. Bobby said the original portion looked small, so we rebuilt it bigger: more corn, a whipped mash base, shredded chicken.</p>
+    <p class="watchlink"><a href="https://simplerecipesbysam.com/meal-prep-kfc-famous-bowl-copycat-high-protein-comfort-food/">Open the recipe + video on Sam's site</a></p>
+  </div></details>
+
+  <details class="panel"><summary>🌯 Enchilada Bowls — the written recipe</summary><div class="body">
+    <p class="sub">The creator's batch makes 7 portions; this is it scaled up to our 10.</p>
+    <p class="macros">480 cal · 51P · 44C · 10F per portion</p>
+    <h4>Ingredients</h4>
+    <ul>
+      <li>Chicken breast — about 4.3 lb, diced</li>
+      <li>Dry jasmine rice — about 2¼ cups</li>
+      <li>Kraft American Singles — 14 to 15 slices (one 16 ct pack)</li>
+      <li>Bell peppers — 5, chopped</li>
+      <li>White onions — 2, chopped</li>
+      <li>Old El Paso red enchilada sauce — 3 cans (10 oz each)</li>
+      <li>Seasoning for the chicken: garlic powder about 1½ Tbsp, paprika about 1 Tbsp, salt about 1½ tsp, black pepper about 1½ tsp</li>
+    </ul>
+    <h4>Method</h4>
+    <ol>
+      <li>Season the diced chicken with the garlic powder, paprika, salt and pepper.</li>
+      <li>Cook the chicken with the chopped peppers and onion in a big pan until the chicken hits 165°F.</li>
+      <li>Cook the rice separately (rice cooker: rice + 3 cups water, scaled a touch for our bigger batch).</li>
+      <li>Stir the cooked rice, the cheese slices and all 3 cans of sauce into the chicken pan.</li>
+      <li>Simmer about 5 minutes until the cheese melts through. Divide into 10 containers.</li>
+    </ol>
+  </div></details>
+
+  <details class="panel"><summary>🍗 KFC Famous Bowls — the written recipe (our version)</summary><div class="body">
+    <p class="sub">Makes 10 bowls. Per bowl: ½ cup mash base, ¾ cup corn, 4 oz chicken, 1 Tbsp cheddar, 2 Tbsp gravy.</p>
+    <p class="macros">About 487 cal · about 49P per bowl (estimated)</p>
+    <h4>Ingredients</h4>
+    <ul>
+      <li>Chicken breast — about 3.3 lb raw (cooks down to 4 oz per bowl), seasoned your way</li>
+      <li>Idahoan instant mashed potatoes — 3 pouches (makes about 5 cups prepared)</li>
+      <li>Low-fat cottage cheese — 1 tub (24 oz), blended smooth</li>
+      <li>Frozen corn — 3 bags (16 oz each), about 7½ cups</li>
+      <li>Reduced-fat shredded cheddar — 1 bag (8 oz); each bowl gets 1 Tbsp</li>
+      <li>Heinz chicken gravy — 1 jar (12 oz); each bowl gets 2 Tbsp</li>
+    </ul>
+    <h4>Method</h4>
+    <ol>
+      <li>Cook the chicken until it hits 165°F, then shred it. Shredded spreads across the bowl and eats bigger than chunks.</li>
+      <li>Make the instant mash. Blend the cottage cheese smooth and whip it into the hot mash with a splash of hot water until fluffy. That is the base.</li>
+      <li>Heat the corn. Warm the gravy.</li>
+      <li>Build each container: ½ cup mash base, ¾ cup corn, 4 oz shredded chicken, 1 Tbsp cheddar, 2 Tbsp gravy over the top.</li>
+    </ol>
+  </div></details>
+
+  <details class="panel"><summary>⚖️ Portioning — how a serving stays honest</summary><div class="body">
+    <p>Each dish makes 10 portions, 5 per person. The enchilada batch is about 4,800 cal total and the KFC batch about 4,870, so one portion is <strong>one tenth of the batch</strong>.</p>
+    <ul>
+      <li><strong>Stir the finished dish really well first</strong> so chicken and rice do not separate.</li>
+      <li><strong>With a kitchen scale:</strong> weigh the whole batch, divide by 10, fill each container to that weight. The KFC bowls are built per bowl instead, using the amounts in the recipe.</li>
+      <li><strong>No scale:</strong> fill all 10 containers in rounds, one scoop in each, then level them off.</li>
+      <li><strong>Storage:</strong> 6 containers per dish in the fridge (Mon–Wed), 4 in the freezer (Thu–Fri). Move frozen ones to the fridge the night before.</li>
+    </ul>
+  </div></details>
+
+<details class="panel"><summary>📅 What We Eat Each Day</summary><div class="body">
+  <p class="sub">Every day: shake for breakfast (300 cal), one snack, and a Two-Bite Brownie for dessert. Bobby gets one extra snack, a Little Bites muffin pouch (180 cal), because his daily target is 200 cal higher.</p>
+
+  <div class="card day">
+    <h3>Monday</h3>
+    <div class="row"><span class="k">Breakfast</span><span class="v">Shake<small>300 cal</small></span></div>
+    <div class="row"><span class="k">Lunch</span><span class="v">Enchilada Bowl<small>480 cal</small></span></div>
+    <div class="row"><span class="k">Dinner</span><span class="v">KFC Famous Bowl<small>~487 cal</small></span></div>
+    <div class="row"><span class="k">Snack</span><span class="v">2 hard-boiled eggs<small>155 cal</small></span></div>
+    <div class="row"><span class="k">Dessert</span><span class="v">Two-Bite Brownie<small>1–2 each</small></span></div>
+    <div class="row"><span class="k">Bobby +</span><span class="v">Little Bites muffin pouch<small>180 cal</small></span></div>
+  </div>
+
+  <div class="card day">
+    <h3>Tuesday</h3>
+    <div class="row"><span class="k">Breakfast</span><span class="v">Shake<small>300 cal</small></span></div>
+    <div class="row"><span class="k">Lunch</span><span class="v">KFC Famous Bowl<small>~487 cal</small></span></div>
+    <div class="row"><span class="k">Dinner</span><span class="v">Enchilada Bowl<small>480 cal</small></span></div>
+    <div class="row"><span class="k">Snack</span><span class="v">Greek yogurt bowl with berries<small>~150 cal</small></span></div>
+    <div class="row"><span class="k">Dessert</span><span class="v">Two-Bite Brownie<small>1–2 each</small></span></div>
+    <div class="row"><span class="k">Bobby +</span><span class="v">Little Bites muffin pouch<small>180 cal</small></span></div>
+  </div>
+
+  <div class="card day">
+    <h3>Wednesday</h3>
+    <div class="row"><span class="k">Breakfast</span><span class="v">Shake<small>300 cal</small></span></div>
+    <div class="row"><span class="k">Lunch</span><span class="v">Enchilada Bowl<small>480 cal</small></span></div>
+    <div class="row"><span class="k">Dinner</span><span class="v">KFC Famous Bowl<small>~487 cal</small></span></div>
+    <div class="row"><span class="k">Snack</span><span class="v">2 hard-boiled eggs<small>155 cal</small></span></div>
+    <div class="row"><span class="k">Dessert</span><span class="v">Two-Bite Brownie<small>1–2 each</small></span></div>
+    <div class="row"><span class="k">Bobby +</span><span class="v">Little Bites muffin pouch<small>180 cal</small></span></div>
+  </div>
+
+  <div class="card day">
+    <h3>Thursday</h3>
+    <div class="row"><span class="k">Breakfast</span><span class="v">Shake<small>300 cal</small></span></div>
+    <div class="row"><span class="k">Lunch</span><span class="v">KFC Famous Bowl<small>~487 cal</small></span></div>
+    <div class="row"><span class="k">Dinner</span><span class="v">Enchilada Bowl<small>480 cal</small></span></div>
+    <div class="row"><span class="k">Snack</span><span class="v">Greek yogurt bowl with berries<small>~150 cal</small></span></div>
+    <div class="row"><span class="k">Dessert</span><span class="v">Two-Bite Brownie<small>1–2 each</small></span></div>
+    <div class="row"><span class="k">Bobby +</span><span class="v">Little Bites muffin pouch<small>180 cal</small></span></div>
+  </div>
+
+  <div class="card day">
+    <h3>Friday</h3>
+    <div class="row"><span class="k">Breakfast</span><span class="v">Shake<small>300 cal</small></span></div>
+    <div class="row"><span class="k">Lunch</span><span class="v">Enchilada Bowl<small>480 cal</small></span></div>
+    <div class="row"><span class="k">Dinner</span><span class="v">KFC Famous Bowl<small>~487 cal</small></span></div>
+    <div class="row"><span class="k">Snack</span><span class="v">2 hard-boiled eggs<small>155 cal</small></span></div>
+    <div class="row"><span class="k">Dessert</span><span class="v">Two-Bite Brownie<small>1–2 each</small></span></div>
+    <div class="row"><span class="k">Bobby +</span><span class="v">Little Bites muffin pouch<small>180 cal</small></span></div>
+  </div></div></details>
+
+<details class="panel"><summary>📊 Daily Totals</summary><div class="body">
+  <div class="card person dam">
+    <h3>Dam</h3>
+    <p class="total-big">~1,510 cal <span style="font-size:17px; color:var(--muted); font-weight:600;">/ 1,500 target</span></p>
+    <p>Shake + both meals + snack + one brownie. Right at her number, and protein runs about 150g, well over her 110g target. A second brownie puts her about 90 over.</p>
+  </div>
+  <div class="card person">
+    <h3>Bobby</h3>
+    <p class="total-big">~1,690 cal <span style="font-size:17px; color:var(--muted); font-weight:600;">/ 1,700 target</span></p>
+    <p>Everything Dam has, plus the Little Bites pouch. Same portions, same meals, no separate cooking.</p>
+  </div></div></details>
+
+<details class="panel"><summary>🍰 Dessert — every night, both of us</summary><div class="body">
+  <div class="card">
+    <h3>Bought, not made 🛒</h3>
+    <p><strong>H-E-B Bakery Two-Bite Brownies</strong> (12 oz pack, $5.19). Dam loved them in Week 1, so they are back. One pack is on the list, same as last week; a second pack is +$5.19 if one each is not cutting it.</p>
+  </div></div></details>
+
+<details class="panel"><summary>🚨 Fillers & the Emergency Stash</summary><div class="body">
+  <div class="card">
+    <p>Carried over from Week 1, not bought again unless it is gone:</p>
+    <ul class="emerg" style="list-style:none; margin-top:8px;">
+      <li>🍲 Miso soup — ~35 cal a cup (just stir the paste into hot water)</li>
+      <li>🍇 Frozen grapes, 1-cup bags — ~62 cal</li>
+      <li>🍿 SkinnyPop single-serve bags — ~65 cal (the Week 1 swap that stuck)</li>
+    </ul>
+    <p class="sub">Stash rule: an emergency snack swaps for that night's dessert — it doesn't stack on top.</p>
+  </div></div></details>
+
+<details class="panel"><summary>🛒 The Shopping List</summary><div class="body">
+  <div class="card">
+    <p class="sub" style="margin-top:0;">Bulverde H-E-B plus! (Spring Branch) · Curbside · Prices checked Nov 10–11 · Cart not built yet</p>
+    <ul class="list">
+      <li><span>Chicken breast value packs ×2 (about 7.6 lb needed)</span><span class="p">$22.70</span></li>
+      <li><span>Jasmine rice, 2 lb (Hill Country Fare)</span><span class="p">$2.70</span></li>
+      <li><span>Kraft Singles, 16 ct</span><span class="p">$4.05</span></li>
+      <li><span>Old El Paso red enchilada sauce ×3</span><span class="p">$6.99</span></li>
+      <li><span>Green bell peppers ×5</span><span class="p">$3.80</span></li>
+      <li><span>White onions ×2</span><span class="p">~$2.00</span></li>
+      <li><span>Idahoan mashed potato pouches ×3</span><span class="p">$4.02</span></li>
+      <li><span>Low-fat cottage cheese, 24 oz</span><span class="p">$2.88</span></li>
+      <li><span>Frozen corn, 16 oz ×3</span><span class="p">$4.23</span></li>
+      <li><span>Reduced-fat shredded cheddar, 8 oz</span><span class="p">$3.13</span></li>
+      <li><span>Heinz chicken gravy, 12 oz jar</span><span class="p">$3.02</span></li>
+      <li><span>Eggs, 18 ct</span><span class="p">$2.59</span></li>
+      <li><span>Greek yogurt, 32 oz</span><span class="p">$3.44</span></li>
+      <li><span>Frozen blueberries</span><span class="p">$3.28</span></li>
+      <li><span>Little Bites muffins, 5 ct (Bobby's extra)</span><span class="p">$4.18</span></li>
+      <li><span>Two-Bite Brownies (dessert)</span><span class="p">$5.19</span></li>
+    </ul>
+    <p class="total-big" style="margin-top:12px;">Total ≈ $78.20</p>
+    <p class="sub">Chicken is priced at the full pack estimate but charged by weight; Week 1's packs came in light, which would put the real total near $71.88. Onions are the one estimated price. A second brownie pack would make it ≈ $83.39. Dam's household items already in the cart are separate. Budget is under $100 ✅</p>
+  </div></div></details>
+
+  </div>
+
+<div class="note"><strong>Prep day note:</strong> Cook once on Sunday Nov 15. Portions keep 3–4 days in the fridge — freeze the Thursday/Friday portions on prep day and move them to the fridge the night before.</div>
+
+  <p class="foot">Made with Dönut 🍩 · Week 2 · Nov 16–20, 2026 · <a href="index.html">Back to home</a></p>
+</div>
+</body>
+</html>

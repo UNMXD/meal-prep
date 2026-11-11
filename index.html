@@ -18,116 +18,69 @@
   .sub{color:var(--muted); font-size:17px; margin-top:6px;}
   .card{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px; margin:14px 0; box-shadow:0 1px 3px rgba(60,50,20,.06);}
   a{color:var(--accent); font-weight:600;}
-  table{width:100%; border-collapse:collapse; font-size:17px;}
-  th,td{padding:8px 6px; border-bottom:1px dashed var(--line); text-align:left;}
-  th{color:var(--muted); font-size:15px; text-transform:uppercase; letter-spacing:.4px;}
-  tr:last-child td{border-bottom:0;}
   .down{color:var(--accent2); font-weight:700;}
   .weeklink{display:block; text-decoration:none; color:var(--ink);}
   .weeklink h3{font-size:21px; color:var(--ink);}
   .weeklink .go{color:var(--accent); font-weight:700;}
   .tag{display:inline-block; background:var(--chip); border-radius:999px; padding:3px 12px; font-size:15px; font-weight:600; margin:2px 4px 2px 0;}
   .foot{color:var(--muted); font-size:15px; text-align:center; margin-top:36px;}
-
-  .card{overflow:hidden;}
   .hero{background:linear-gradient(135deg,#2e933c 0%,#4caf50 55%,#7cc24f 100%); color:#fff; border-radius:20px; padding:26px 22px; margin:6px 0 10px; box-shadow:0 4px 14px rgba(46,147,60,.25);}
   .hero h1{color:#fff;}
   .hero .sub{color:#eaf7ea;}
   .hero .emojis{font-size:26px; letter-spacing:6px; margin-bottom:10px;}
   .thumb{margin:-18px -18px 14px; position:relative;}
   .thumb img{width:100%; display:block; aspect-ratio:16/9; object-fit:cover;}
-  .thumb .play{position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:64px; height:64px; border-radius:50%; background:rgba(0,0,0,.55); color:#fff; font-size:26px; display:flex; align-items:center; justify-content:center; padding-left:5px;}
   .thumb .vlabel{position:absolute; left:10px; bottom:10px; background:rgba(0,0,0,.55); color:#fff; font-size:13px; font-weight:700; padding:3px 10px; border-radius:999px;}
-  .ttband{margin:-18px -18px 14px; background:linear-gradient(135deg,#2e933c,#7cc24f); color:#fff; padding:24px 18px; text-align:center;}
-  .ttband .big{font-size:32px;}
-  .ttband .t{font-weight:800; font-size:17px; margin-top:4px;}
-
   .favcard{border:2px solid #f2b705; background:linear-gradient(180deg,#fffdf2,#ffffff);}
   .favbadge{display:inline-block; background:#f2b705; color:#4a3500; border-radius:999px; padding:3px 12px; font-size:15px; font-weight:800; margin-bottom:8px;}
-  .chartbox{margin:14px 0;}
-  .chartbox .who{font-weight:800; font-size:18px; margin-bottom:2px;}
-  .chartbox svg{width:100%; height:auto; display:block;}
+  .bignum{font-size:30px; font-weight:900; letter-spacing:-.5px;}
 </style>
 </head>
 <body>
 <div class="wrap">
 
   <div class="hero"><div class="emojis">🥗 🍗 🥑 🌽 🍚</div><h1>🍽️ Our Meal Prep</h1>
-  <p class="sub">Week by week: what we're eating, the recipe videos, and our weigh-ins. One page per week, and the weight tracker has its own page too.</p></div>
+  <p class="sub">The simple version: where we are, what we are eating this week, and the recipes that earned a permanent spot.</p></div>
 
   <h2>⚖️ Weight Tracker</h2>
   <a class="weeklink" href="weight.html">
     <div class="card">
-      <p><strong>Bobby:</strong> 194 lb <span class="down">↓1</span> &nbsp;·&nbsp; <strong>Dam:</strong> 124 lb <span class="down">↓1</span></p>
-      <p class="sub">Both down a pound in Week 1. The graphs live on their own page now.</p>
-      <p class="go">See the weight tracker →</p>
+      <p><strong>Bobby:</strong> <span class="bignum">192.5 lb</span> <span class="down">↓2.5</span> &nbsp;·&nbsp; <strong>Dam:</strong> <span class="bignum">124 lb</span> <span class="down">↓1</span></p>
+      <p class="sub">Simple tracker now, no graphs to babysit. Tap in to see the log or add a weigh-in.</p>
+      <p class="go">Open the tracker →</p>
     </div>
   </a>
 
-  <h2>🎯 Our Macros — Daily Targets</h2>
-  <div class="card">
-    <table>
-      <tr><th></th><th>Calories</th><th>Protein</th><th>Carbs</th><th>Fat</th></tr>
-      <tr><td><strong>Dam</strong></td><td>1,500</td><td>110g</td><td>155g</td><td>50g</td></tr>
-      <tr><td><strong>Bobby</strong></td><td>1,700</td><td>145g</td><td>145g</td><td>60g</td></tr>
-    </table>
-    <p class="sub">Same meals, same portions for both. Bobby's extra calories come from his cinnamon-roll snack. Breakfast shake is 300 cal — its exact protein/carbs/fat depend on the label, so the day totals below estimate it at ~25g protein.</p>
-  </div>
+  <h2>📅 This Week</h2>
+  <a class="weeklink" href="week-2.html">
+    <div class="card">
+      <h3>Week 2 — Nov 16–20, 2026</h3>
+      <p>Cheesy Chicken Enchilada Bowls + KFC Famous Bowls. Comfort food week: same shake, snacks and brownies, Little Bites muffins for Bobby.</p>
+      <p><span class="tag">20 portions</span><span class="tag">Groceries ≈ $78.20</span><span class="tag">Videos + written recipes 🎬</span></p>
+      <p class="go">See Week 2 →</p>
+    </div>
+  </a>
 
-  <div class="card">
-    <h3 style="margin-bottom:8px;">How a Week 1 day fits — Dam</h3>
-    <table>
-      <tr><th>What</th><th>Cal</th><th>Protein</th></tr>
-      <tr><td>Breakfast shake</td><td>300</td><td>~25g</td></tr>
-      <tr><td>Mexican Chicken &amp; Rice</td><td>450</td><td>45g</td></tr>
-      <tr><td>Teriyaki Chicken Fried Rice</td><td>450</td><td>45g</td></tr>
-      <tr><td>Snack — eggs or yogurt bowl</td><td>~150</td><td>~13–17g</td></tr>
-      <tr><td>Dessert — H-E-B Two-Bite Brownie</td><td>~90–180</td><td>1–2g</td></tr>
-      <tr><td><strong>Day total</strong></td><td><strong>≈1,430–1,455</strong></td><td><strong>≈135–145g</strong></td></tr>
-    </table>
-    <p class="sub">Target: 1,500 cal / 110g protein. ✅ Calories land just under, with ~50 cal of headroom. ✅ Protein lands well OVER 110g — the good direction for losing fat and keeping muscle. Carbs and fat land under her targets too.</p>
-  </div>
+  <h2>📖 Recipes</h2>
+  <a class="weeklink" href="recipes.html">
+    <div class="card favcard">
+      <div class="thumb"><img src="https://img.youtube.com/vi/y4rxduzwBeI/hqdefault.jpg" alt="Mexican Chicken and Rice video thumbnail"><span class="vlabel">⭐ FAVORITE #1</span></div>
+      <span class="favbadge">👍👍 Two thumbs up</span>
+      <h3>Mexican Chicken &amp; Rice</h3>
+      <p>The keeper. The dishes that earn it live on the Recipes page from now on.</p>
+      <p class="go">Open Recipes →</p>
+    </div>
+  </a>
 
-  <div class="card">
-    <h3 style="margin-bottom:8px;">How a Week 1 day fits — Bobby</h3>
-    <table>
-      <tr><th>What</th><th>Cal</th><th>Protein</th></tr>
-      <tr><td>Breakfast shake</td><td>300</td><td>~25g</td></tr>
-      <tr><td>Mexican Chicken &amp; Rice</td><td>450</td><td>45g</td></tr>
-      <tr><td>Teriyaki Chicken Fried Rice</td><td>450</td><td>45g</td></tr>
-      <tr><td>Snack — eggs or yogurt bowl</td><td>~150</td><td>~13–17g</td></tr>
-      <tr><td>His extra — 2 cinnamon rolls</td><td>210</td><td>~2g</td></tr>
-      <tr><td>Dessert — H-E-B Two-Bite Brownie</td><td>~90–180</td><td>1–2g</td></tr>
-      <tr><td><strong>Day total</strong></td><td><strong>≈1,640–1,665</strong></td><td><strong>≈135–145g</strong></td></tr>
-    </table>
-    <p class="sub">Target: 1,700 cal / 145g protein. ✅ Calories land just under. Protein lands right around target — if the shake's label says 30g+ protein, he's fully covered.</p>
-  </div>
-
-
-  <h2>⭐ Our Favorites</h2>
-  <p class="sub">The dishes that earned a permanent spot. This list grows as we cook — when something's a keeper, it goes up here.</p>
-  <div class="card favcard">
-    <div class="thumb"><img src="https://img.youtube.com/vi/y4rxduzwBeI/hqdefault.jpg" alt="Mexican Chicken and Rice video thumbnail"><span class="vlabel">⭐ FAVORITE #1</span></div>
-    <span class="favbadge">👍👍 Two thumbs up</span>
-    <h3 style="font-size:22px;">Mexican Chicken &amp; Rice</h3>
-    <p class="macros" style="font-weight:700;">450 cal · 45g protein · 47g carbs · 9g fat</p>
-    <p>First meal of Week 1 — and it landed. Bobby &amp; Dam loved it at lunch on Nov 9, so it's the first dish on this list. By Jalalsamfit.</p>
-    <p><span class="tag">Week 1</span><span class="tag">Makes 10 portions</span></p>
-    <p><a href="week-1.html">See the recipe on the Week 1 page →</a></p>
-  </div>
-
-  <h2>📅 The Weeks</h2>
-
+  <h2>🗄️ Archive</h2>
   <a class="weeklink" href="week-1.html">
     <div class="card">
       <h3>Week 1 — Nov 9–13, 2026</h3>
-      <p>Mexican Chicken &amp; Rice + Slow Cooker Teriyaki Chicken Fried Rice. Shake for breakfast, eggs/yogurt snacks, a store-bought dessert every night, cinnamon rolls for Bobby.</p>
-      <p><span class="tag">20 portions</span><span class="tag">Groceries $94.01 actual</span><span class="tag">Videos + written recipes 🎬</span></p>
-      <p class="go">See Week 1 →</p>
+      <p>Where it started. The full week as it happened: day plan, macros, shopping list and the actual $94.01 order.</p>
+      <p><span class="tag">Archived</span><span class="tag">Groceries $94.01 actual</span></p>
+      <p class="go">See the Week 1 archive →</p>
     </div>
   </a>
-
-  <p class="sub">Week 2 gets its own page when we plan it — new meals, new videos, same tracker up top.</p>
 
   <p class="foot">Made with Dönut 🍩</p>
 

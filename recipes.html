@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Recipes — Meal Prep</title>
+<style>
+  :root{
+    --bg:#faf6ef; --card:#ffffff; --ink:#22201c; --muted:#6f6a5e;
+    --accent:#e4572e; --accent2:#2e933c; --line:#e8e0d0; --chip:#f3ecdd;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{background:var(--bg); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; font-size:19px; line-height:1.5; padding:20px 16px 48px;}
+  .wrap{max-width:560px; margin:0 auto;}
+  h1{font-size:32px; line-height:1.15; letter-spacing:-.5px;}
+  h2{font-size:24px; margin:34px 0 12px; letter-spacing:-.3px;}
+  h4{margin:14px 0 6px;}
+  p{margin:8px 0;}
+  ul,ol{margin:8px 0 8px 22px;}
+  li{margin:5px 0;}
+  .sub{color:var(--muted); font-size:17px; margin-top:6px;}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px; margin:14px 0; box-shadow:0 1px 3px rgba(60,50,20,.06); overflow:hidden;}
+  a{color:var(--accent); font-weight:600;}
+  .tag{display:inline-block; background:var(--chip); border-radius:999px; padding:3px 12px; font-size:15px; font-weight:600; margin:2px 4px 2px 0;}
+  .foot{color:var(--muted); font-size:15px; text-align:center; margin-top:36px;}
+  .back{display:inline-block; margin-bottom:10px; font-size:17px;}
+  .hero{background:linear-gradient(135deg,#2e933c 0%,#4caf50 55%,#7cc24f 100%); color:#fff; border-radius:20px; padding:26px 22px; margin:6px 0 10px; box-shadow:0 4px 14px rgba(46,147,60,.25);}
+  .hero h1{color:#fff;}
+  .hero .sub{color:#eaf7ea;}
+  .thumb{margin:-18px -18px 14px; position:relative;}
+  .thumb img{width:100%; display:block; aspect-ratio:16/9; object-fit:cover;}
+  .thumb .play{position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:64px; height:64px; border-radius:50%; background:rgba(0,0,0,.55); color:#fff; font-size:26px; display:flex; align-items:center; justify-content:center; padding-left:5px;}
+  .thumb .vlabel{position:absolute; left:10px; bottom:10px; background:rgba(0,0,0,.55); color:#fff; font-size:13px; font-weight:700; padding:3px 10px; border-radius:999px;}
+  .favcard{border:2px solid #f2b705; background:linear-gradient(180deg,#fffdf2,#ffffff);}
+  .favbadge{display:inline-block; background:#f2b705; color:#4a3500; border-radius:999px; padding:3px 12px; font-size:15px; font-weight:800; margin-bottom:8px;}
+  .macros{font-weight:700;}
+  .video{position:relative; border-radius:12px; overflow:hidden; margin:10px 0; aspect-ratio:16/9; background:#000;}
+  .video iframe{position:absolute; inset:0; width:100%; height:100%; border:0;}
+  details.panel{background:var(--card); border:1px solid var(--line); border-radius:16px; margin:14px 0; box-shadow:0 1px 3px rgba(60,50,20,.06);}
+  details.panel>summary{list-style:none; cursor:pointer; font-weight:800; font-size:20px; padding:16px 18px;}
+  details.panel>summary::-webkit-details-marker{display:none;}
+  details.panel .body{padding:0 18px 18px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back" href="index.html">← Home</a>
+
+  <div class="hero"><h1>📖 Our Recipes</h1>
+  <p class="sub">The keepers. A dish only lands here after we have cooked it, eaten it all week, and both thumbs went up.</p></div>
+
+  <div class="card favcard">
+    <div class="thumb"><img src="https://img.youtube.com/vi/y4rxduzwBeI/hqdefault.jpg" alt="Mexican Chicken and Rice video thumbnail"><span class="vlabel">⭐ FAVORITE #1</span></div>
+    <span class="favbadge">👍👍 Two thumbs up</span>
+    <h2 style="margin-top:4px;">Mexican Chicken &amp; Rice</h2>
+    <p class="macros">450 cal · 45g protein · 47g carbs · 9g fat per portion</p>
+    <p>First meal of Week 1, and it landed. Bobby &amp; Dam loved it at lunch on Nov 9. By Jalalsamfit. We make 10 portions on prep day.</p>
+    <p><span class="tag">Week 1</span><span class="tag">Makes 10 portions</span></p>
+    <div class="video"><iframe src="https://www.youtube.com/embed/y4rxduzwBeI" title="Mexican Chicken and Rice video" allowfullscreen loading="lazy"></iframe></div>
+    <p><a href="https://www.youtube.com/watch?v=y4rxduzwBeI">Open the video on YouTube</a></p>
+  </div>
+
+  <details class="panel"><summary>⭐ Mexican Chicken &amp; Rice — the written recipe</summary><div class="body">
+    <p class="sub">The creator's recipe, doubled to make our 10 portions. Cups and pounds, the way we actually cook it.</p>
+    <p class="macros">450 cal · 45P · 47C · 9F per portion</p>
+    <h4>Ingredients</h4>
+    <ul>
+      <li>Chicken breast — 2 value packs (7 lb total across both Week 1 dishes; about half goes in here)</li>
+      <li>Dry rice — about 2¼ cups (we used 2 cups our first time and it felt like too little rice, don't short it)</li>
+      <li>Black beans — 1 can (15 oz), drained &amp; rinsed</li>
+      <li>Canned diced tomatoes — 2 cans (14.5 oz each), our addition; not in the creator's written recipe</li>
+      <li>Yellow onions — 2, diced</li>
+      <li>Red bell peppers — 2, diced</li>
+      <li>Limes — 2 (juice + wedges)</li>
+      <li>Fresh coriander / cilantro — chopped, for garnish</li>
+      <li>Chicken seasoning: 4 tsp oregano, 4 tsp paprika, 2 tsp each of garlic powder, cumin, chili powder, salt &amp; black pepper</li>
+      <li>Olive oil — 4 tsp, for cooking</li>
+      <li>About 2½ cups water or chicken stock (the tomato juice counts as liquid)</li>
+    </ul>
+    <h4>Method</h4>
+    <ol>
+      <li>Cube the chicken and season it all over with the chicken seasoning above and the juice of 2 limes. Rest 10 minutes while you chop the onion and peppers.</li>
+      <li>Cook the chicken in a little olive oil in a big pot or deep pan, 6–8 minutes, until golden and cooked through. Set aside.</li>
+      <li>In the same pot, cook the onion and bell pepper until soft.</li>
+      <li>Add the dry rice, 2 tsp of each seasoning (the same mix as the chicken), and the diced tomatoes. Toast 1–2 minutes, stirring.</li>
+      <li>Add the water/stock and the black beans. Mix well, cover, and simmer on low 12–15 minutes, stirring halfway so the rice doesn't stick.</li>
+      <li>Fold the chicken back in with the chopped coriander and a final squeeze of lime. Divide into 10 containers.</li>
+    </ol>
+  </div></details>
+
+  <div class="card">
+    <h3>On trial</h3>
+    <p>Week 2's Cheesy Chicken Enchilada Bowls and KFC Famous Bowls get their shot Nov 16–20. If they earn it, they move in here. One Week 1 dish has already been retired for good (check the <a href="week-1.html">Week 1 archive</a>).</p>
+  </div>
+
+  <p class="foot">Made with Dönut 🍩 · <a href="index.html">Home</a></p>
+
+</div>
+</body>
+</html>
